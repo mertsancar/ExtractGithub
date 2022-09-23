@@ -1,0 +1,23 @@
+{% load static %}
+
+<title> Search Github </title>
+
+<link href="{% static 'css/form.css' %}" rel="stylesheet">
+
+<!-- <h1> Search Github Page </h1> 
+<form action="/users/" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+</form> -->
+
+
+<div class="login">
+	<h1>Search for Keywords in Github</h1>
+    <form action="/users/" method="post">
+        {% csrf_token %}
+        {{form}}
+    	<!-- <input type="text" name="u" value="{{searchKeyword}}" placeholder="Unity Developer..." required="required" /> -->
+        <button type="submit" class="btn btn-primary btn-block btn-large">Get users</button>
+    </form>
+</div>
