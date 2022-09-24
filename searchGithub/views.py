@@ -1,6 +1,8 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
-from .scraperGithub import get_Github_Users
+from searchGithub.database import get_github_candidates
+
+from .scraperGithub import extract_github
 from .forms import NameForm
 
 searchKeyword = ""
@@ -31,7 +33,8 @@ def searchGithub(request):
 def users(request):
 
     if request.method == 'POST':
-        usersdata = get_Github_Users(request.POST["searchKeyword"])
+        extract_github(request.POST["searchKeyword"])
+        usersdata = get_github_candidates(request.POST["searchKeyword"])
         data = {"usersdata" : usersdata}
 
     return render(request, "users.html", data)

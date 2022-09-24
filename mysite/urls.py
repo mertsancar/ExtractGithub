@@ -20,5 +20,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('searchGithub.urls')),
     path('users/', include('searchGithub.urls')),
-    path('searchgithub/', include('searchGithub.urls'))
+    path('searchgithub/', include('searchGithub.urls')),
+    path('home/', include('searchGithub.urls'))
 ]

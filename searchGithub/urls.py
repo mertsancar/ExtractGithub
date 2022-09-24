@@ -4,5 +4,6 @@ from . import views
 urlpatterns = [
     path("", views.home),
     path("users/", views.users),
-    path("searchgithub/", views.searchGithub)
+    path("searchgithub/", views.searchGithub),
+    path("home/", views.home)
 ]
